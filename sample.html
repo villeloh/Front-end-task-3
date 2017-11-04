@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sample</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <p id="test">Select this element and modify it with JavaScript</p>
+        <p class="example">Lets try to select this...</p>
+        <p class="example">...and this simultaneously.</p>
+    </main>
+  
+</body>
+
+<script>
+    "use strict";
+	const test = document.querySelector('#test');
+	test.innerHTML = '<a href="http://metropolia.fi">Metropolia</a>';
+	test.setAttribute('style', 'font-weight: bold');
+	test.style = 'font-weight: bold';
+
+	const examples = document.querySelectorAll('.example');
+    //examples[0].innerHTML = 'first p element with example class';
+    //examples[1].innerHTML = 'second p element with example class';
+
+    let texts = ['huu', 'hii'];
+
+    examples.forEach( (elem, i) => {
+        elem.addEventListener('click', (evt) => {
+            elem.innerHTML = 'hip hurraa';
+            evt.target.innerHTML = texts[i];
+        });
+    });
+
+</script>
+
+</html>
